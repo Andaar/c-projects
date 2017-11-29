@@ -5,9 +5,10 @@ using namespace std;
 
 void drukuj(char t[8][8])
 {
+	cout << "  H G F E D C B A" << endl;
 	for(int i = 0; i < 8; i++)
 	{
-		cout << "|";
+		cout << 8 - i << "|";
 		for(int j = 0; j < 8; j++)
 		{
 			if(i%2==0 && t[i][j] == ' ' && j%2 == 0)
@@ -23,8 +24,9 @@ void drukuj(char t[8][8])
 				cout << t[i][j] << "|";
 			}
 		}
-		cout << endl;
+		cout << i + 1 << endl;
 	}
+	cout << "  A B C D E F G H" << endl;
 }
 int main()
 {
@@ -37,7 +39,7 @@ int main()
 			t[i][j] = ' ';
 		}
 	}
-	
+	t[6][6] = 'W';
 	drukuj(t);
 	return 0;
 }
